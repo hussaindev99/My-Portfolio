@@ -1,113 +1,300 @@
+"use client"
 import Image from "next/image";
-
+import myimg from "@/public/dummy-image.jpg"
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { TiThMenu } from "react-icons/ti";
+import { useState } from "react";
+import { GiCrossMark } from "react-icons/gi";
 export default function Home() {
+  const [on, setOn] = useState(false)
+  const onbutton = () => {
+    setOn(!on)
+  }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <header className="header">
+        <a href="#home" className="logo"> Muhammad
+          <span>Hussain</span>
+        </a>
+        <div id="menu-icon" onClick={onbutton}>
+          {on ? <GiCrossMark /> : <TiThMenu className='bx bx-menu' />}
         </div>
-      </div>
+        {on && (
+          <div className="dropdown">
+            <a href="#home" class="active">Home</a>
+            <a href="#education">Education</a>
+            <a href="#services">Services</a>
+            <a href="#testmonials">Testmonials</a>
+            <a href="#contact">Contact</a>
+          </div>
+        )
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        }
+        <nav className="navbar">
+          <a href="#home" class="active">Home</a>
+          <a href="#education">Education</a>
+          <a href="#services">Services</a>
+          <a href="#testmonials">Testmonials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+      <section className="home" id="home">
+        <div className="home-content">
+          <h1>Hi, It's <span>Hussain</span></h1>
+          <h3 className="text-animation">I'm a <span>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          </span></h3>
+          <p>Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Labore ipsam earum
+            autem laudantium nisi a ipsum
+            quidem? Eveniet neque, dolores laudantium
+            eius ab iure amet ad voluptas numquam a quia.</p>
+          <div className="social-icons">
+            <a href="#"><FaLinkedinIn className='bx bxl-linkedin' /></a>
+            <a href="#"><FaGithub className='bx bxl-github' /></a>
+            <a href="#"><FaInstagram className='bx bxl-instagram-alt' /></a>
+            <a href="#"><FaTwitter className='bx bxl-twitter' /></a>
+          </div>
+          <div className="btn-group">
+            <a href="#" className="btn">Hire</a>
+            <a href="#contact" className="btn1">Contact</a>
+          </div>
+        </div>
+        <div className="home-img">
+          <Image src={myimg} alt="" />
+        </div>
+      </section>
+      <section className="education" id="education">
+        <h2 className="heading">Education</h2>
+        <div className="timeline-items">
+          {/* <!-- 1./?  --> */}
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-date">2022</div>
+            <div className="timeline-content">
+              <h3>High School</h3>
+              <p>"Graduated from high school with a focus on
+                [your major subjects or extracurricular activities].
+                Developed foundational skills in [specific areas, e.g.,
+                science, arts, leadership],
+                and participated in [notable activities or achievements]"</p>
+            </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          </div>
+          {/* <!-- 2./? --> */}
+          <div className="timeline-item">
+            <div className="timeline-dot"> </div>
+            <div className="timeline-date">2024</div>
+            <div className="timeline-content">
+              <h3>College</h3>
+              <p>"Graduated with a focus on [your major/field].
+                Participated in various projects and activities
+                that honed skills in [specific areas].
+                Developed a strong foundation in [relevant subjects or skills]"</p>
+            </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          {/* <!-- 3?\ --> */}
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2024</div>
+            <div class="timeline-content">
+              <h3>Internship</h3>
+              <p>Assisted in developing web applications,
+                conducted user testing, and collaborated with senior
+                developers to implement new features,
+                gaining hands-on experience in a professional environment</p>
+
+            </div>
+
+          </div>
+          {/* <!-- 4./? --> */}
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-date">2024</div>
+            <div className="timeline-content">
+              <h3>Job 0</h3>
+              <p>"Engineered scalable software solutions, led code reviews,
+                and optimized application performance
+                to enhance user experience and system efficiency " </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <section className="services" id="services">
+        <h2 className="heading">Services</h2>
+
+        <div className="services-container">
+          {/* <!-- 1../?<> --> */}
+          <div className="service-box">
+            <div className="service-info">
+              <h4>UI Design</h4>
+              <p>"Crafting intuitive and visually engaging
+                user interfaces that enhance user experience
+                and drive interaction. Our designs focus on simplicity,
+                consistency, and functionality to ensure a
+                seamless experience across all platforms."</p>
+            </div>
+          </div>
+
+
+          {/* <!-- 2../>? -->s */}
+          <div className="service-box">
+            <div className="service-info">
+              <h4>Frontend Development</h4>
+              <p>Building responsive and interactive websites
+                that bring your designs to life. Our development
+                focuses on clean code, performance optimization,
+                and cross-browser compatibility to deliver
+                seamless user experiences across all devices.</p>
+            </div>
+          </div>
+
+
+          {/* <!-- 4../<> --> */}
+
+          <div className="service-box">
+            <div className="service-info">
+              <h4>Testing</h4>
+              <p>Ensuring the highest quality of your application
+                through rigorous testing. We identify and
+                resolve issues early, focusing on functionality,
+                usability, and performance to deliver a
+                flawless user experience.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <section className="testmonials" id="testmonials">
+        <div className="testmonials-box">
+          <h2 className="heading">Testmonials</h2>
+
+          <div className="wrapper">
+            {/* <!-- 1../<> --> */}
+            <div className="testmonials-item">
+              <Image src={myimg} alt="" />
+              <h2>Hussain</h2>
+              <div className="rating">
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+              </div>
+              <p>"Working with the team was
+                an exceptional experience.
+                Their professionalism,
+                attention to detail,
+                and dedication to delivering
+                a high-quality product were evident
+                throughout the project!"</p>
+            </div>
+
+            {/* <!-- 2../<> --> */}
+            <div className="testmonials-item">
+              <Image src={myimg} alt="" />
+              <h2>Hussain</h2>
+              <div className="rating">
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+              </div>
+              <p>"Working with the team was
+                an exceptional experience.
+                Their professionalism,
+                attention to detail,
+                and dedication to delivering
+                a high-quality product were evident
+                throughout the project"</p>
+            </div>
+
+            {/* <!-- 3../<>? --> */}
+
+            <div className="testmonials-item">
+              <Image src={myimg} alt="" />
+              <h2>Hussain</h2>
+              <div className="rating">
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+                <i className='bx bxs-star' id="star"></i>
+              </div>
+              <p>"Working with the team was
+                an exceptional experience.
+                Their professionalism,
+                attention to detail,
+                and dedication to delivering
+                a high-quality product were evident
+                throughout the project!"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact" id="contact">
+        <h2 className="heading">Contact <span>Me</span></h2>
+
+        <form action="">
+          <div className="input-group">
+            <div className="input-box">
+              <input type="text" placeholder="Full Name" />
+              <input type="email" placeholder="Email" />
+            </div>
+            <div className="input-box">
+              <input type="number" placeholder="Phone Number" />
+              <input type="text" placeholder="Subject" />
+            </div>
+          </div>
+
+          <div className="input-group-2">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn" />
+          </div>
+        </form>
+
+      </section>
+      <footer className="footer">
+        <div className="social">
+          <a href="#"><FaLinkedinIn className='linkedin' /></a>
+          <a href="#"><FaGithub className='linkedin' /></a>
+          <a href="#"><FaInstagram className='linkedin' /></a>
+          <a href="#"><FaTwitter className='linkedin' /></a>
+        </div>
+        <ul className="list">
+          <li>
+            <a href="#">FAQ</a>
+          </li>
+
+          <li>
+            <a href="#">Services</a>
+          </li>
+
+          <li>
+            <a href="#">About Me</a>
+          </li>
+
+          <li>
+            <a href="#">Contact</a>
+          </li>
+
+          <li>
+            <a href="#">Testmonials</a>
+          </li>
+        </ul>
+        <p className="copyright">
+          © Muhammad Hussain | All Rights Reserved
+        </p>
+      </footer>
+
+    </>
   );
 }
