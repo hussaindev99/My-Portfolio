@@ -8,17 +8,16 @@ import { FaTwitter } from "react-icons/fa";
 import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
 import { GiCrossMark } from "react-icons/gi";
+import Link from "next/link";
 export default function Home() {
   const [on, setOn] = useState(false)
   const onbutton = () => {
-    setOn(!on)
+    setOn(!on);
   }
   return (
     <>
       <header className="header">
-        <a href="#home" className="logo"> Muhammad
-          <span>Hussain</span>
-        </a>
+        <Link href="#home" className="logo"> Muhammad<span>{'Hussain'}</span></Link>
         <div id="menu-icon" onClick={onbutton}>
           {on ? <GiCrossMark /> : <TiThMenu className='bx bx-menu' />}
         </div>
@@ -30,9 +29,7 @@ export default function Home() {
             <a href="#testmonials">Testmonials</a>
             <a href="#contact">Contact</a>
           </div>
-        )
-
-        }
+        )}
         <nav className="navbar">
           <a href="#home" class="active">Home</a>
           <a href="#education">Education</a>
@@ -43,8 +40,8 @@ export default function Home() {
       </header>
       <section className="home" id="home">
         <div className="home-content">
-          <h1>Hi, It's <span>Hussain</span></h1>
-          <h3 className="text-animation">I'm a <span>
+          <h1>Hi, {`It's`} <span>{"Hussain"}</span></h1>
+          <h3 className="text-animation">{`I'm a `}<span>
 
           </span></h3>
           <p>Lorem ipsum dolor sit amet consectetur
@@ -76,11 +73,11 @@ export default function Home() {
             <div className="timeline-date">2022</div>
             <div className="timeline-content">
               <h3>High School</h3>
-              <p>"Graduated from high school with a focus on
+              <p>{`"Graduated from high school with a focus on
                 [your major subjects or extracurricular activities].
-                Developed foundational skills in [specific areas, e.g.,
-                science, arts, leadership],
-                and participated in [notable activities or achievements]"</p>
+                Developed foundational skills in 
+                [specific areas, e.g.science, arts, leadership],
+                and participated in [notable activities or achievements]"`}</p>
             </div>
 
           </div>
@@ -90,10 +87,10 @@ export default function Home() {
             <div className="timeline-date">2024</div>
             <div className="timeline-content">
               <h3>College</h3>
-              <p>"Graduated with a focus on [your major/field].
+              <p>{`"Graduated with a focus on [{"your major/field"}].
                 Participated in various projects and activities
-                that honed skills in [specific areas].
-                Developed a strong foundation in [relevant subjects or skills]"</p>
+                that honed skills in [{"specific areas"}].
+                Developed a strong foundation in [{"relevant subjects or skills"}]"`}</p>
             </div>
 
           </div>
@@ -104,10 +101,10 @@ export default function Home() {
             <div class="timeline-date">2024</div>
             <div class="timeline-content">
               <h3>Internship</h3>
-              <p>Assisted in developing web applications,
+              <p>{`"Assisted in developing web applications,
                 conducted user testing, and collaborated with senior
                 developers to implement new features,
-                gaining hands-on experience in a professional environment</p>
+                gaining hands-on experience in a professional environment"`}</p>
 
             </div>
 
@@ -118,9 +115,9 @@ export default function Home() {
             <div className="timeline-date">2024</div>
             <div className="timeline-content">
               <h3>Job 0</h3>
-              <p>"Engineered scalable software solutions, led code reviews,
+              <p>{`"Engineered scalable software solutions, led code reviews,
                 and optimized application performance
-                to enhance user experience and system efficiency " </p>
+                to enhance user experience and system efficiency"`} </p>
             </div>
 
           </div>
@@ -134,11 +131,11 @@ export default function Home() {
           <div className="service-box">
             <div className="service-info">
               <h4>UI Design</h4>
-              <p>"Crafting intuitive and visually engaging
+              <p>{`"Crafting intuitive and visually engaging
                 user interfaces that enhance user experience
                 and drive interaction. Our designs focus on simplicity,
                 consistency, and functionality to ensure a
-                seamless experience across all platforms."</p>
+                seamless experience across all platforms."`}</p>
             </div>
           </div>
 
@@ -147,11 +144,11 @@ export default function Home() {
           <div className="service-box">
             <div className="service-info">
               <h4>Frontend Development</h4>
-              <p>Building responsive and interactive websites
+              <p>{`Building responsive and interactive websites
                 that bring your designs to life. Our development
                 focuses on clean code, performance optimization,
                 and cross-browser compatibility to deliver
-                seamless user experiences across all devices.</p>
+                seamless user experiences across all devices.`}</p>
             </div>
           </div>
 
@@ -161,11 +158,11 @@ export default function Home() {
           <div className="service-box">
             <div className="service-info">
               <h4>Testing</h4>
-              <p>Ensuring the highest quality of your application
+              <p>{`Ensuring the highest quality of your application
                 through rigorous testing. We identify and
                 resolve issues early, focusing on functionality,
                 usability, and performance to deliver a
-                flawless user experience.</p>
+                flawless user experience.`}</p>
             </div>
           </div>
 
@@ -187,13 +184,13 @@ export default function Home() {
                 <i className='bx bxs-star' id="star"></i>
                 <i className='bx bxs-star' id="star"></i>
               </div>
-              <p>"Working with the team was
+              <p>{`"Working with the team was
                 an exceptional experience.
                 Their professionalism,
                 attention to detail,
                 and dedication to delivering
                 a high-quality product were evident
-                throughout the project!"</p>
+                throughout the project!"`}</p>
             </div>
 
             {/* <!-- 2../<> --> */}
@@ -207,13 +204,13 @@ export default function Home() {
                 <i className='bx bxs-star' id="star"></i>
                 <i className='bx bxs-star' id="star"></i>
               </div>
-              <p>"Working with the team was
+              <p>{`"Working with the team was
                 an exceptional experience.
                 Their professionalism,
                 attention to detail,
                 and dedication to delivering
                 a high-quality product were evident
-                throughout the project"</p>
+                throughout the project"`}</p>
             </div>
 
             {/* <!-- 3../<>? --> */}
@@ -228,13 +225,13 @@ export default function Home() {
                 <i className='bx bxs-star' id="star"></i>
                 <i className='bx bxs-star' id="star"></i>
               </div>
-              <p>"Working with the team was
+              <p>{`"Working with the team was
                 an exceptional experience.
                 Their professionalism,
                 attention to detail,
                 and dedication to delivering
                 a high-quality product were evident
-                throughout the project!"</p>
+                throughout the project!"`}</p>
             </div>
           </div>
         </div>
